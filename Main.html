@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!-- Declare the language -->
+    <html lang = "en">
+    <head>
+      <!-- Create some set style classes -->
+      <style>
+        *{
+          box-sizing: border-box;
+        }
+        
+        body{
+          font-family: Roboto, veranda, sans-serif;
+          margin: 10;
+          background-color:#076467;
+          height: 1000px;
+        }
+        
+        /*Top Title */
+        .header{
+          padding: 10px;
+          text-align: center;
+          background: #14C2ED;
+          color: #154360;
+          object-fit: contain;
+        }
+        
+        /*Font in header*/
+        .header h1{
+        font: size: 30px;
+        }
+
+        /* Style the tab */
+        .tab {
+          overflow: hidden;
+          border: 1px solid #ccc;
+          background-color: #f1f1f1;
+          
+
+        }
+        
+        /* Style the buttons inside the tab */
+        .tab button {
+          background-color: inherit;
+          float: left;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          padding: 14px 16px;
+          transition: 0.3s;
+          font-size: 17px;
+        }
+        
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+          background-color: #ddd;
+        }
+        
+        /* Create an active/current tablink class */
+        .tab button.active {
+          background-color: #ccc;
+        }
+        
+        /* Style the tab content */
+        .tabcontent {
+          padding: 6px 12px;
+          border: 1px solid #ccc;
+          border-top: none;
+        }
+
+        /*Button Style*/ 
+        .pressbutton {
+          margin:10px;  
+          width:200px;
+          background-color:#ddd; 
+          border:double #154360; 
+          color:#154360; 
+          font-size:15px; 
+          text-align:center; 
+          font-weight:bold; 
+          min-height:40px; 
+          font-size:15px; 
+          text-align:center;
+          padding: 10px;
+        }
+
+        /*Create a second button style*/
+        .otherbutton {
+          margin:10px;  
+          width:100px;
+          background-color:#E9F7EF; 
+          border:soild #154360; 
+          color:#154360; 
+          font-size:30px;
+          font-weight: bold;
+          font-family: Veranda;
+          text-align:center; 
+          min-height:40px; 
+          font-size:15px; 
+          text-align:center;
+          padding: 10px;
+        }
+
+        /*Create a third button style*/
+        .pressbuttontwo {
+          margin:10px;  
+          width:200px;
+          background-color:#E9F7EF; 
+          border:double #154360; 
+          color:#154360; 
+          font-size:15px; 
+          text-align:center; 
+          font-weight:bold; 
+          min-height:40px; 
+          font-size:15px; 
+          text-align:center;
+          padding: 10px;
+        }
+
+        /*Bottom Footer (branding purposes) */
+        .footer {
+          position: fixed;
+          text-align: center;
+          bottom: 0px;
+          width: 99%;
+          background-color: DarkSalmon;
+          color: white;
+          
+        }
+        .grid-container-element { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr ; 
+            grid-gap: 20px;  
+            padding:50px; 
+            margin-top:20px;
+            object-fit: contain;
+        } 
+        .grid-child-element {  
+            padding:5px; 
+            width:90%; 
+            border:3px solid#000; 
+            background-color:#DAF7A6;
+        }
+                
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+      </style>
+      
+    </head>
+    
+    <body>
+      <!-- Create the website header -->
+      <div class="header">
+        <h1> Batteries: Reduce, Reuse, Recycle </h1>
+        <p> Extend the life of every battery</p>
+      </div>
+      
+      <div class="tab">
+        <!--Navigation back to the home page-->
+        <a href = "Main.html">
+          <button class="tablinks">Home</button> </a>
+        <a href = "AddBatteries.html">
+          <button class="tablinks"> Add Batteries </button> </a>
+        <a href = "ViewBatteries.php">
+          <button class="tablinks"> View Batteries </button> </a>
+        <a href = "EditApplications.html">
+          <button class="tablinks" > Edit Applications </button> </a>
+        <a href = "index.html">
+          <button class = "tablinks" style = "position:absolute; right:10px"> Log Out </button> </a>
+      </div>
+
+      <div class = "grid-container-element" > 
+        <div id = "HumanImpacts" class = "grid-child-element"; style = "height:650px">
+          <p style="text-align:center; font-size:40px; color:#CCCCC; font-weight:bold;" >Human Impact</p>
+          <p>   Batteries are an essential part of our lives. Without them, countless electronics would cease to function. Batteries, however, have a detrimental impact on many lives. From mining minerals in batteries to the manufacturing process, many lives are put at risk. Cobalt is mined for the production of various types of batteries. Roughly 40,000 children toil in Cobalt mines. Furthermore, 15,000 people are die in mines anuually. While we cannot stop using batteries, we must be mindful of how we use and dispose of batteries. </p>
+         <img src="CobaltMiningHumanImpacts.PNG" alt="Impacts of Cobalt Mining on Individuals"  style="margin:auto; width:100%;height:30%; border:double;" > </img>
+        </div>
+        
+        <div id = "EnviornmentalImpacts"; class = "grid-child-element"; ">
+          <p style="text-align:center; font-size:40px; color:#CCCCC; font-weight:bold;" >Enviornmental Impact</p>
+          <p> While batteries provide many convinent and mobile solutions to many problems in our lives, manufacturing batteries comes at a cost. Mining the minerals necessary to producing batteries releases large amount of green house gases and drains a land off of its natural resources. Mining for minerals can take up to 65% of a country's water. Runoff from mines can pollute nearby water sources. The pollution can take upwards of 100 years to clear. Furthermore, fine dust particles from blasting and mining the earth can harm local ecosystems. Climitologists estimate that for every tonne of mined minerals, such as lithium, 15 tonnes of carbon dioxide are released. The emissions from these practices contribute to pollution on a global scale. As more minerals are needed, more mines are opened and more ecosystems are destroyed. Mining for resources is critical to the manufacturing of batteries, but mining, in of itself is a polluting and harmful process. As consumers, we must be careful of how we expend these resources.
+          </p>
+         <img src="CobaltMiningEnvironmentalImpacts.PNG" alt="Environmental Impacts of Cobalt Mining"  style="margin:auto; width:100%;height:30%; border:double;" > </img>
+          <p><br></p>
+        </div>
+        
+        <div id = "BatteryWaste"; class = "grid-child-element"; style = "margin:left;  ">
+          <p style="text-align:center; font-size:40px; color:#CCCCC; font-weight:bold;" >Impacts of Wasting Batteries</p>
+          <p> Batteries are means to store electrical energy in the form of chemical energy. Disposing batteries properly is essential to preventing enviornemental damage. Disposing batteries in a landfill contributes to the amount of metal in the landfill. Excessive amounts of metal in the land fill can lead to contamination of water sources. Furthermore, the electrolyte of a battery is corrosive, eventually any battery will leak. If left in a landfill, the poisonus electrolyte will make its way into the enviornment, and potentially into our water sources.Situations where the battery negatively impacts the environemtn can be prevented by drawing more life out of every battery and recycling batteries.</p>
+          <img src="BatteriesWasting.PNG" alt="Corrosive Electrolyte" style = " width:100%;height:30%; border:double;" > </img>
+        </div>
+
+
+        <div id = "ActionsToTake"; class = "grid-child-element"; style = "margin:left;  ">
+          <p style="text-align:center; font-size:40px; color:#CCCCC; font-weight:bold;" >Actions to Take</p>
+          <p> While it is impossible to entirely stop using batteries, actions can be taken to iminimze the harmful impacts of batteries. Batteries are costlys no in a monetary sense, but in a humanitarian and evnrionemtnal sense. Some tips to help minimize battery wastage are as follows: <ul>
+  <li>Avoid leaving batteries in electronics one knows one will not use often.</li>
+  <li>Use rechargeable batteries as opposed to single use.</li>
+  <li>Do not throw away batteries once they cannot perform a task, rather, reuse the battery in a less intensive method.</li>
+</ul>These basic daily tipcs can help reduce the negative impacts of batteries on lives. While these methods do not prevent these negative impacts, they curtail the excessive occurance of the determinetal impacts of battery manufacturing and waste on lives.</p>
+          <img src=".PNG" alt="Corrosive Electrolyte" style = " width:100%;height:30%; border:double;" > </img>
+        </div>
+
+        <div id = "ThisApp"; class = "grid-child-element"; style = "margin:left;  ">
+          <p style="text-align:center; font-size:40px; color:#CCCCC; font-weight:bold;" >How to Use this App</p>
+          <p> This app is designed to assist with minimzing the waste of rechargeable batteries. Wasting batteries is a factor causes unnecessary harm to the environemtna and the lives of individuals both through the repeated manufacturing process and the impacts of imporper disposal. The goal of this web based app is to prevent the excessive waste of batteries. <br> This app can be accessed after creating an account. In the 'Add Batteries' tab, one enters various information about the batteries one uses. One can view this information in the 'View Batteries tab'. This information can be edited in the 'Edit Application tab'. The app will count the days until the capacity of the eneted battery drops below half of the oepration capacity of the device entered. At this stage, the app will match the half capacity batteries to another appliance. Then the app will send the user a notification to trade the batteries from the higher capaicty appliance to the lwoer cpaaicty appliace. The simplified switching process ensures that a user minimizes the batteries they waste by extracting the maximum life out of every battery via repurposing the battery.</p>
+          <img src=".PNG" alt="Corrosive Electrolyte" style = " width:100%;height:30%; border:double;" > </img>
+        </div>
+
+  
+        <div id = "Sources" style = "margin:left; padding:5px 0; padding:30px; width:400px; height:800px; border:3px solid#000; background-color:#DAF7A6;">
+          <p style="text-align:center; font-size:40px; color:#CCCCC; font-weight:bold;" >Sources</p>
+          <p> https://unctad.org/news/developing-countries-pay-environmental-cost-electric-car-batteries <br><br>
+            https://www.theworldcounts.com/challenges/planet-earth/mining/health-effects-of-mining <br><br>
+            https://ecojungle.net/post/lithium-extraction-environmental-impact/#:~:<br>text=Lithium%20mining%20destroys<br>%20the%20soil,to%<br>20the%20risk%20of%<br>20extinction. <br><br>
+            https://climate.mit.edu/ask-mit/how-much-co2-emitted-manufacturing-batteries <br>
+            https://gsiwaste.com/battery-recycling-is-important-for-environmental-health/#:~:text=1)%20Improperly%<br>20disposed%20batteries<br>%20contribute%20to%20water%20and%20air%<br>20pollution.&text=When%20depleted%20batteries<br>%20are%20tossed,contaminate<br>%20groundwater<br>%20and%20surface%20water. <br><br>
+            https://www.cirbasolutions.com/learning-center/recycling-benefits/ <br><br>
+            https://hackaday.com/2022/10/19/crusty-leaking-cells-kill-your-tech-just-whats-going-on/<br>
+          </p>
+        </div>
+      </div>
+      <div class="footer">
+          <p> Author: Ritika Roy </p>
+      </div>
+    </body>
+  </html>

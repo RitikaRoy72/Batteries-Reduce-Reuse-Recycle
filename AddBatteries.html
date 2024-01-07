@@ -1,0 +1,246 @@
+0<!DOCTYPE html>
+<!-- Declare the language -->
+  <html lang = "en">
+    <head>
+      <!-- Create some set style classes -->
+      <style>
+        *{
+          box-sizing: border-box;
+        }
+        
+        body{
+          font-family: Roboto, veranda, sans-serif;
+          margin: 10;
+          background-color:#076467;
+          height: 1000px;
+        }
+        
+        /*Top Title */
+        .header{
+          padding: 10px;
+          text-align: center;
+          background: #14C2ED;
+          color: #154360;
+          object-fit: contain;
+        }
+        
+        /*Font in header*/
+        .header h1{
+        font: size: 30px;
+        }
+
+        /* Style the tab */
+        .tab {
+          overflow: hidden;
+          border: 1px solid #ccc;
+          background-color: #f1f1f1;
+          
+
+        }
+        
+        /* Style the buttons inside the tab */
+        .tab button {
+          background-color: inherit;
+          float: left;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          padding: 14px 16px;
+          transition: 0.3s;
+          font-size: 17px;
+        }
+        
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+          background-color: #ddd;
+        }
+        
+        /* Create an active/current tablink class */
+        .tab button.active {
+          background-color: #ccc;
+        }
+        
+        /* Style the tab content */
+        .tabcontent {
+          padding: 6px 12px;
+          border: 1px solid #ccc;
+          border-top: none;
+        }
+
+        /*Button Style*/ 
+        .pressbutton {
+          margin:10px;  
+          width:200px;
+          background-color:#ddd; 
+          border:double #154360; 
+          color:#154360; 
+          font-size:15px; 
+          text-align:center; 
+          font-weight:bold; 
+          min-height:40px; 
+          font-size:15px; 
+          text-align:center;
+          padding: 10px;
+        }
+
+        /*Create a second button style*/
+        .otherbutton {
+          margin:10px;  
+          width:100px;
+          background-color:#E9F7EF; 
+          border:soild #154360; 
+          color:#154360; 
+          font-size:30px;
+          font-weight: bold;
+          font-family: Veranda;
+          text-align:center; 
+          min-height:40px; 
+          font-size:15px; 
+          text-align:center;
+          padding: 10px;
+        }
+
+        /*Create a third button style*/
+        .pressbuttontwo {
+          margin:10px;  
+          width:200px;
+          background-color:#E9F7EF; 
+          border:double #154360; 
+          color:#154360; 
+          font-size:15px; 
+          text-align:center; 
+          font-weight:bold; 
+          min-height:40px; 
+          font-size:15px; 
+          text-align:center;
+          padding: 10px;
+        }
+
+        /*Bottom Footer (branding purposes) */
+        .footer {
+          position: fixed;
+          text-align: center;
+          bottom: 0px;
+          width: 99%;
+          background-color: DarkSalmon;
+          color: white;
+          
+        }
+        
+      </style>
+    </head>
+    
+    <body>
+      <!-- Create the website header -->
+      <div class="header">
+        <h1> Batteries: Reduce, Reuse, Recycle </h1>
+        <p> Extend the life of every battery</p>
+      </div>
+
+      <div class="tab">
+        <!--Navigation back to the home page-->
+        <a href = "Main.html">
+          <button class="tablinks">Home</button> </a>
+        <a href = "AddBatteries.html">
+          <button class="tablinks"> Add Batteries </button> </a>
+        <a href = "ViewBatteries.php">
+          <button class="tablinks"> View Batteries </button> </a>
+        <a href = "EditApplications.html">
+          <button class="tablinks" > Edit Applications </button> </a>
+        <a href = "index.html">
+          <button class = "tablinks" style = "position:absolute; right:10px"> Log Out </button> </a>
+      </div>
+
+    <!--Create a path for Adding Products -->
+      <!-- Declare and title path-->
+      <div id = "addproduct" class="tabcontent">
+        <div style="width:225px; height:150px; position:absolute; left:8px; top:220px; border:1px solid #000; background-color:#F9EBEA">
+          
+          <form>
+            <!-- Create a form for different products
+            each button must take in user text
+            and output it in the form
+            the form must be cleared with each new open-->
+            <p style="position:absolute; top:1px; left:30px; font-size:25px; font-family:Garamond"> Enter a Product:</p>
+            <input class="pressbutton" type="text" style="position:absolute; top:70px;" placeholder="Enter Product" onclick="OpenProductForm(this.value)" onkeyup="OpenProductForm(this.value)"> </input>
+          </form>
+        </div> 
+        
+        <!-- A form that takes in the user input button
+        communicates the information to a php page
+        clears on every open -->
+          <div id = "productform" style = "width:700px; height:800px; object-fit:contain; position:absolute; left:270px; top:220px; border:1px solid#000; background-color:#C6C6C6; display:none; ">
+            <!--Title based on user input -->
+          <form id="thisproductform" action = "Entry.php" method = "GET">
+            <h1 id="formhead" style="position:absolute; left:100px; top:40px; font-family:Veranda; color:#0E6251"> </h1>
+            <!--Take in basic user information -->
+            
+            <label style="position:absolute; left:100px; top:170px; font-size:15px; font-family:Veranda;" for="productPower">Product Power (Milli-watt)</label>
+            <input style="position:absolute; left:350px; top:150px; min-height:40px;" type="text" id="productPower" name="productPower" onkeyup="checkinput(this.value)"><br>
+            <label style="position:absolute; left:100px; top:300px; font-size:15px; font-family:Veranda;" for="batteryCapacity">Battery Capacity (Milli-watt hour)</label>
+            <input style="position:absolute; left:350px; top:280px; min-height:40px;" type="text" id="batteryCapacity" name="batteryCapacity" onkeyup="checkinput(this.value)"><br>
+            <label style="position:absolute; left:100px; top:430px; font-size:15px; font-family:Veranda;" for="userate">Battery Amount </label>
+            <input style="position:absolute; left:350px; top:410px; min-height:40px;" type="text" id="userate" name="userate" onkeyup="checkinput(this.value)"><br>
+            <label style="position:absolute; left:100px; top:560px; font-size:15px; font-family:Veranda;" for="category">Select Battery type</label>
+            <select style="position:absolute; left:350px; top:540px; min-height:40px;" id="category" name="category"> 
+          <option value="NI-MH"> Nickel Metal Hydride</option>
+          <option value="NI-MH">Nickel Metal Hydride </option>
+          <option value="LIB">Lithium-ION</option>
+          <option value="NI-CD">Nickel Cadimium</option>
+          <option value="Pb-AC">Lead Acid</option>
+          <option value="Ni-ZN">Nickel Zinc</option>
+          <option value="Other">Other</option>
+          </select>
+            <input class="otherbutton" style = "position:absolute; left:100px; top:680px; font-size:15px; font-family:Veranda; background-color:#FDFEFE" type="submit" value="Submit"></inpt>
+          </form>
+        </div>
+        
+        <!-- Javascript function that senses user activity -->
+        <script>
+          function OpenProductForm(str) {                  
+            document.getElementById("thisproductform").reset();
+            document.getElementById('productform').style.display = "block";
+            document.getElementById("formhead").innerHTML = str;
+	    	    // var xmlhttp = new XMLHttpRequest();
+	         //  xmlhttp.open("GET", "ProductNameWrite.php?name="+str, true);
+	         //  xmlhttp.send();
+
+
+            var xmlhttp = new XMLHttpRequest();
+			      xmlhttp.onreadystatechange = function() {
+	        	  if (this.readyState == 4 && this.status == 200) {}
+	          }
+	          xmlhttp.open("GET", "ProductNameWrite.php?name="+str, true);
+	          xmlhttp.send();
+	        
+            return;
+          }
+        </script>
+        
+      <!-- Javascript function to ensure valid user input -->
+      <script>
+        function checkinput(inval){
+         if (Number.isInteger(parseInt(inval)) == true) {
+           document.getElementById('invalidin').style.display = "none";
+           return;
+          }
+          else {
+             document.getElementById('invalidin').style.display = "block", 10000;
+             document.getElementById("thisproductform").reset();
+          }
+        }
+      </script>
+
+      <!-- Warning sign to indicate bad user input -->      
+      <div id = "invalidin" style="width:200px; height:125px; position:absolute; left:20px; top:400px; border:2px soild #641E16; background-color:#E74E3C; font-family:Cournier New; font-size:15px; text-align:center; padding:10px; display:none;">
+        <h1 style="color:#FEFDFD"> Please enter integers only </h1>
+      </div>
+
+    </div>
+
+      <div class="footer">
+          <p> Author: Ritika Roy </p>
+      </div>
+      
+    </body>
+  </html>
